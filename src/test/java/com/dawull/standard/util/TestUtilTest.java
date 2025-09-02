@@ -1,17 +1,15 @@
 package com.dawull.standard.util;
 
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
-
 import java.util.Scanner;
 
-public class TestUtilTest {
+import static org.assertj.core.api.Assertions.assertThat;
 
+public class TestUtilTest {
     @Test
-    @DisplayName("TestUtil.getScanner()")
+    @DisplayName("TestUtil.genScanner()")
     public void t1() {
         Scanner scanner = TestUtil.getScanner("""
                 등록
@@ -24,10 +22,8 @@ public class TestUtilTest {
         String author = scanner.nextLine();
 
         assertThat(cmd).isEqualTo("등록");
-        assertThat(content).isEqualTo("나의 죽음을 적들에게 알리지 마라.");
+        assertThat(content).isEqualTo("나의 죽음을 적들에게 알리지 마라!");
         assertThat(author).isEqualTo("이순신");
 
-
     }
-
 }
