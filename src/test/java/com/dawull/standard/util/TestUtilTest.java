@@ -12,7 +12,7 @@ public class TestUtilTest {
     @Test
     @DisplayName("TestUtil.genScanner()")
     public void t1() {
-        Scanner scanner = TestUtil.getScanner("""
+        Scanner scanner = TestUtil.genScanner("""
                 등록
                 나의 죽음을 적들에게 알리지 마라!
                 이순신

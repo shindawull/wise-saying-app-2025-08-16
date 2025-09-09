@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class AppTest {
     public static String run(String input) {
         input.stripIndent().trim();
-        Scanner scanner = TestUtil.getScanner(input);
+        Scanner scanner = TestUtil.genScanner(input);
         ByteArrayOutputStream outputStream = TestUtil.setOutToByteArray();
 
         App app = new App(scanner);

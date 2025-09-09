@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class TestUtil {
-    public static Scanner getScanner(String input) {
+    public static Scanner genScanner(String input) {
         return new Scanner(input);
     }
 

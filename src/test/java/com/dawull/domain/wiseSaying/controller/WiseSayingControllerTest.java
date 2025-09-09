@@ -25,7 +25,8 @@ public class WiseSayingControllerTest {
                 종료
                 """);
 
-        assertThat(output).contains("명령) ");
+        assertThat(output)
+                .contains("명령) ");
     }
 
 }
