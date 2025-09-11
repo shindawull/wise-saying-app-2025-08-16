@@ -1,27 +1,42 @@
 package com.dawull.domain.wiseSaying.controller.WiseSayingController;
 
+import com.dawull.domain.wiseSaying.entity.WiseSaying.WiseSaying;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class WiseSayingController {
     private final Scanner scanner;
     private int lastId = 0;
+    private List<WiseSaying> wiseSayings;
 
     public WiseSayingController(Scanner scanner) {
         this.scanner = scanner;
+        this.wiseSayings = new ArrayList<>();
     }
 
     public void actionAdd() {
         System.out.println("명언 : ");
+        String content = scanner.nextLine();
         System.out.println("작가 : ");
+        String author = scanner.nextLine();
 
         int id = ++lastId;
-        System.out.println(id +"번 명언이 등록되었습니다.");
+
+        WiseSaying wiseSaying = new WiseSaying(id, content, author);
+        wiseSayings.add(wiseSaying);
+
+        System.out.println(id + "번 명언이 등록되었습니다.");
     }
 
     public void actionList() {
         System.out.println("번호 / 작가 / 명언");
         System.out.println("----------------------");
-        System.out.println("2 / 작자미상 / 과거에 집착하지 마라.");
-        System.out.println("1 / 작자미상 / 현재를 사랑하라.");
+
+        for (WiseSaying wiseSaying : wiseSayings.reversed()) {
+            System.out.println(wiseSaying.getId() + " / " + wiseSaying.getAuthor() + " / " + wiseSaying.getContent());
+        }
+
     }
 }
